@@ -47,16 +47,23 @@ public class Student {
     }
 
     public Integer getNumberOfExamsTaken(){
+        this.numberOfExamsTaken  = this.testScores.size();
         return this.numberOfExamsTaken;
+    }
+
+
+    public void setExamScore(int examID, Double newScore){
+        //this.testScores()
     }
 
 
     public String getExamScores(){
         String examScores = "";
 
-        for(int i = 0; i < testScores.size(); i++){
-            examScores += formatString(i,testScores.get(i));
-        }
+//        for(int i = 0; i < testScores.size(); i++){
+//            int examID = i+1;
+//            examScores += formatString(examID,testScores.get(i));
+//        }
 
         return examScores;
     }
@@ -66,7 +73,7 @@ public class Student {
     }
 
     private String formatString (int counter, Double examScore){
-        return "Exam " + (counter+1) + " ->  " + String.format("%.0f",examScore) + "\n";
+        return "Exam " + (counter) + " ->  " + String.format("%.0f",examScore) + "\n";
     }
 
 }
