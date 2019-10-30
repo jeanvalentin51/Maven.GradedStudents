@@ -17,4 +17,18 @@ public class StudentTest {
         System.out.println(output);
 
     }
+
+    @Test
+    public void addExamScore() {
+        String fName = "Valentin";
+        String lName = "G";
+        Double [] examScores = {};
+        Student testStudent = new Student(fName,lName,examScores);
+
+        testStudent.addExamScore(100.0);
+        String output = testStudent.getExamScores();
+
+        System.out.println(output);
+
+    }
 }

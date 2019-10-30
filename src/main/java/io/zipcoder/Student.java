@@ -27,7 +27,7 @@ public class Student {
 
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -35,7 +35,7 @@ public class Student {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -43,11 +43,11 @@ public class Student {
     }
 
     public ArrayList<Double> getTestScores() {
-        return testScores;
+        return this.testScores;
     }
 
     public Integer getNumberOfExamsTaken(){
-        return numberOfExamsTaken;
+        return this.numberOfExamsTaken;
     }
 
 
@@ -59,6 +59,10 @@ public class Student {
         }
 
         return examScores;
+    }
+
+    public void addExamScore(Double examScores){
+        this.testScores.add(examScores);
     }
 
     private String formatString (int counter, Double examScore){
