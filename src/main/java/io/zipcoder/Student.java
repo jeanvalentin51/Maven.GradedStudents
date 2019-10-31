@@ -56,7 +56,6 @@ public class Student {
             this.testScores.set(examID - 1,newScore);
     }
 
-
     public String getExamScores(){
         String examScores = "";
 
@@ -70,6 +69,15 @@ public class Student {
 
     public void addExamScore(Double examScores){
         this.testScores.add(examScores);
+    }
+
+    public Double getAverageExamScores (){
+        double sumOfExamScores = 0;
+
+        for (int i = 0; i < this.testScores.size(); i++) {
+            sumOfExamScores += this.testScores.get(i);
+        }
+        return sumOfExamScores/this.testScores.size();
     }
 
     private String formatString (int counter, Double examScore){
