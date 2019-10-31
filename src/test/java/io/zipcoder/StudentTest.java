@@ -72,4 +72,16 @@ public class StudentTest {
 
         System.out.println(output);
     }
+
+    @Test
+    public void testToString() {
+        String fName = "Valentin";
+        String lName = "G";
+        Double [] examScores = {100.0,150.0,250.0,0.0};
+
+        Student  testStudent = new Student(fName,lName,examScores);
+
+        String output = testStudent.toString();
+        System.out.println(output);
+    }
 }

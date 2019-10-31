@@ -80,8 +80,16 @@ public class Student {
         return sumOfExamScores/this.testScores.size();
     }
 
+    @Override
+    public String toString() {
+        String result = getExamScores();
+
+        return "Student Name: " + this.firstName + " " + this.lastName + "\n" +
+                "Exam Scores:\n" + result;
+    }
+
     private String formatString (int counter, Double examScore){
-        return "Exam " + (counter) + " ->  " + String.format("%.0f",examScore) + "\n";
+        return "\t" + "Exam " + (counter) + " ->  " + String.format("%.0f",examScore) + "\n";
     }
 
 }
