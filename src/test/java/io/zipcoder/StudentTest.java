@@ -45,4 +45,18 @@ public class StudentTest {
         Assert.assertEquals(4,output,0.00);
         System.out.println(output);
     }
+
+    @Test
+    public void setExamScore() {
+        String fName = "Valentin";
+        String lName = "G";
+        Double [] examScores = {100.0,95.0,85.0,96.0};
+
+        Student  testStudent = new Student(fName,lName,examScores);
+
+        testStudent.setExamScore(1,85.0);
+        String output = testStudent.getExamScores();
+
+        System.out.println(output);
+    }
 }

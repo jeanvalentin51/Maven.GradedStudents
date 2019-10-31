@@ -53,17 +53,17 @@ public class Student {
 
 
     public void setExamScore(int examID, Double newScore){
-        //this.testScores()
+            this.testScores.set(examID - 1,newScore);
     }
 
 
     public String getExamScores(){
         String examScores = "";
 
-//        for(int i = 0; i < testScores.size(); i++){
-//            int examID = i+1;
-//            examScores += formatString(examID,testScores.get(i));
-//        }
+        for(int i = 0; i < testScores.size(); i++){
+            int examID = i+1;
+            examScores += formatString(examID,testScores.get(i));
+        }
 
         return examScores;
     }
