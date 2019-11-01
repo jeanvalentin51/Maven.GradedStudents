@@ -14,15 +14,13 @@ public class Student {
 
 
     ArrayList<Double> testScores = new ArrayList<Double>();
-    //ArrayList<Double> examScores;
+
 
 
     public Student(String studentFirstName, String studentLasName, Double [] examScores) {
         this.firstName = studentFirstName;
         this.lastName = studentLasName;
         Collections.addAll(this.testScores,examScores);
-        //this.examScores.addAll(Arrays.asList(testScores));
-        //examScores = new ArrayList<Double>();
     }
 
 
