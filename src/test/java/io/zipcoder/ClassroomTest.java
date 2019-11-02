@@ -2,6 +2,8 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class ClassroomTest {
 
     @Test
@@ -46,6 +48,27 @@ public class ClassroomTest {
 
     }
 
+
+    @Test
+    public void addStudent() {
+        int maxNumberOfStudents = 1;
+        Classroom classroom = new Classroom(maxNumberOfStudents);
+        Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
+
+        Student [] preEnrollment = classroom.getStudents();
+        String preEnrollmentAsString = Arrays.toString(preEnrollment);
+        System.out.println("===========================");
+        System.out.println(preEnrollmentAsString);
+
+        Student student = new Student("Leon", "Hunter", examScores);
+        classroom.addStudent(student);
+
+        Student [] postEnrollment = classroom.getStudents();
+        String postEnrollmentAsString = Arrays.toString(postEnrollment);
+
+        System.out.println("===========================");
+        System.out.println(postEnrollmentAsString);
+    }
 
 }
 

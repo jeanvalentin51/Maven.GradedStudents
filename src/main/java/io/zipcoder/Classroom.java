@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class Classroom {
     Student [] allStudents;
 
+
+
     public Classroom (Student[] students){
         this.allStudents = students;
     }
@@ -33,5 +35,10 @@ public class Classroom {
 
         return examScores/this.allStudents.length;
     }
+
+    public void addStudent (Student newStudent){
+        this.allStudents[this.allStudents.length - 1] = newStudent;
+    }
+
 }
 
