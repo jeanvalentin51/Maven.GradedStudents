@@ -40,5 +40,19 @@ public class Classroom {
         this.allStudents[this.allStudents.length - 1] = newStudent;
     }
 
+    public void removeStudent (String firstName, String lastName){
+        int lastStudentIndex = allStudents.length - 1;
+        int indexStudentToBeRemoved = 0;
+
+        for (int i = 0; i < allStudents.length; i++){
+            if (allStudents[i].getFirstName().equals(firstName) && allStudents[i].getLastName().equals(lastName)){
+                indexStudentToBeRemoved = i;
+            }
+        }
+
+        allStudents[indexStudentToBeRemoved] = allStudents[lastStudentIndex];
+        allStudents[lastStudentIndex] = null;
+    }
+
 }
 

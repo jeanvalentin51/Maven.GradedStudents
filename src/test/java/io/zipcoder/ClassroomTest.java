@@ -70,5 +70,27 @@ public class ClassroomTest {
         System.out.println(postEnrollmentAsString);
     }
 
+    @Test
+    public void removeStudent() {
+        Double[] student1Scores = {100.0, 150.0, 95.0};
+        Double[] student2Scores = {225.0, 25.0};
+        Double [] student3Scores = {100.0, 150.0};
+
+        Student student1 = new Student("student", "one", student1Scores);
+        Student student2 = new Student("student", "two", student2Scores);
+        Student student3 = new Student("student", "three", student2Scores);
+
+        Student[] allStudents = {student1, student2,student3};
+        Classroom testClassroom = new Classroom(allStudents);
+
+        testClassroom.removeStudent("student","two");
+
+        Student [] postEnrollment = testClassroom.getStudents();
+        String postEnrollmentAsString = Arrays.toString(postEnrollment);
+
+        System.out.println("===========================");
+        System.out.println(postEnrollmentAsString);
+
+    }
 }
 
