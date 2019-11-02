@@ -72,20 +72,20 @@ public class ClassroomTest {
 
     @Test
     public void removeStudent() {
-        Double[] student1Scores = {100.0, 150.0, 95.0};
-        Double[] student2Scores = {225.0, 25.0};
-        Double [] student3Scores = {100.0, 150.0};
+        Double[] student1Scores = {100.0, 175.0, 70.0}; // 115   2
+        Double[] student2Scores = {225.0, 25.0,170.0}; // 140    4
+        Double [] student3Scores = {50.0, 50.0,50.0};  // 50     1
+        Double [] student4Scores = {200.0, 80.0,80.0};  // 120   3
 
         Student student1 = new Student("student", "one", student1Scores);
         Student student2 = new Student("student", "two", student2Scores);
-        Student student3 = new Student("student", "three", student2Scores);
+        Student student3 = new Student("student", "three", student3Scores);
+        Student student4 = new Student("student", "four", student4Scores);
 
-        Student[] allStudents = {student1, student2,student3};
+        Student[] allStudents = {student1, student2,student3,student4};
         Classroom testClassroom = new Classroom(allStudents);
 
-        testClassroom.removeStudent("student","two");
-
-        Student [] postEnrollment = testClassroom.getStudents();
+        Student [] postEnrollment = testClassroom.getStudentsByScore();
         String postEnrollmentAsString = Arrays.toString(postEnrollment);
 
         System.out.println("===========================");

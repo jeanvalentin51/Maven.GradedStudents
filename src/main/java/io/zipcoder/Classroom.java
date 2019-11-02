@@ -20,6 +20,7 @@ public class Classroom {
         this.allStudents = new Student[30];
     }
 
+
     public Student [] getStudents (){
         return this.allStudents;
     }
@@ -52,6 +53,27 @@ public class Classroom {
 
         allStudents[indexStudentToBeRemoved] = allStudents[lastStudentIndex];
         allStudents[lastStudentIndex] = null;
+    }
+
+    public Student [] getStudentsByScore(){
+        double studentOneAverageScore = 0.0;
+        double studentTwoAverageScore = 0.0;
+        Student tempPosition;
+
+        for (int i = 0; i < allStudents.length; i++){
+            if (allStudents.length > 1){
+                for (int k = i; k < allStudents.length ; k++){
+                    studentOneAverageScore = allStudents[i].getAverageExamScores();
+                    studentTwoAverageScore = allStudents[k].getAverageExamScores();
+                    if ( studentOneAverageScore > studentTwoAverageScore){
+                        tempPosition = allStudents[i];
+                        allStudents[i] = allStudents[k];
+                        allStudents[k] = tempPosition;
+                    }
+                }
+            }
+        }
+        return allStudents;
     }
 
 }
