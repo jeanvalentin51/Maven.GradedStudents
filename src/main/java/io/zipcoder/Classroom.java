@@ -22,14 +22,13 @@ public class Classroom {
         return this.allStudents;
     }
 
-
-
-
     public double getAverageExamScore(){
         double examScores = 0;
 
         for (int i = 0; i < this.allStudents.length; i++){
-            // examScores = examScores + this.allStudents[i].getTestScores();
+            for (int k = 0; k < this.allStudents[i].testScores.size(); k++){
+                examScores += this.allStudents[i].testScores.get(k);
+            }
         }
 
         return examScores/this.allStudents.length;

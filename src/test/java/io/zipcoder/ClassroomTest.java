@@ -39,6 +39,11 @@ public class ClassroomTest {
         Student[] allStudents = {student1, student2};
         Classroom testClassroom = new Classroom(allStudents);
 
+        double expected = 250.0;
+        double actual = testClassroom.getAverageExamScore();
+
+        Assert.assertEquals(expected,actual,0.0);
+
     }
 
 
