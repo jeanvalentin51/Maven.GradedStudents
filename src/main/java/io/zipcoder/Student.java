@@ -34,6 +34,7 @@ public class Student {
         this.firstName = firstName;
     }
 
+
     public String getLastName() {
         return this.lastName;
     }
@@ -42,9 +43,11 @@ public class Student {
         this.lastName = lastName;
     }
 
+
     public ArrayList<Double> getTestScores() {
         return this.testScores;
     }
+
 
     public Integer getNumberOfExamsTaken(){
         this.numberOfExamsTaken  = this.testScores.size();
@@ -70,6 +73,7 @@ public class Student {
     public void addExamScore(Double examScores){
         this.testScores.add(examScores);
     }
+
 
     public Double getAverageExamScores (){
         double sumOfExamScores = 0;
