@@ -61,6 +61,7 @@ public class Student {
         this.testScores.add(examScores);
     }
 
+
     public Double getAverageExamScores (){
         double sumOfExamScores = 0;
 

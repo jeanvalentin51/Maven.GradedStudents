@@ -70,6 +70,8 @@ public class StudentTest {
 
         double output = testStudent.getAverageExamScores();
 
+        Assert.assertEquals(125.0,output,0.00);
+
         System.out.println(output);
     }
 
