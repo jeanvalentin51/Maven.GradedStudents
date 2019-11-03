@@ -51,17 +51,25 @@ public class ClassroomTest {
 
     @Test
     public void addStudent() {
-        int maxNumberOfStudents = 1;
+        int maxNumberOfStudents = 3;
         Classroom classroom = new Classroom(maxNumberOfStudents);
-        Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
+        Double[] student1Scores = {100.0, 175.0, 70.0};
+        Double[] student2Scores = {225.0, 25.0,170.0};
+        Double [] student3Scores = {50.0, 50.0,50.0};
 
         Student [] preEnrollment = classroom.getStudents();
         String preEnrollmentAsString = Arrays.toString(preEnrollment);
         System.out.println("===========================");
         System.out.println(preEnrollmentAsString);
 
-        Student student = new Student("Leon", "Hunter", examScores);
-        classroom.addStudent(student);
+        Student student1 = new Student("Leon", "Hunter", student1Scores);
+        classroom.addStudent(student1);
+
+        Student student2 = new Student("Jeff", "Hunter", student2Scores);
+        classroom.addStudent(student2);
+
+        Student student3 = new Student("John", "Hunter", student3Scores);
+        classroom.addStudent(student3);
 
         Student [] postEnrollment = classroom.getStudents();
         String postEnrollmentAsString = Arrays.toString(postEnrollment);
@@ -72,10 +80,34 @@ public class ClassroomTest {
 
     @Test
     public void removeStudent() {
-        Double[] student1Scores = {100.0, 175.0, 70.0}; // 115   2
-        Double[] student2Scores = {225.0, 25.0,170.0}; // 140    4
-        Double [] student3Scores = {50.0, 50.0,50.0};  // 50     1
-        Double [] student4Scores = {200.0, 80.0,80.0};  // 120   3
+        Double[] student1Scores = {100.0, 175.0, 70.0};
+        Double[] student2Scores = {225.0, 25.0,170.0};
+        Double [] student3Scores = {50.0, 50.0,50.0};
+        Double [] student4Scores = {200.0, 80.0,80.0};
+
+        Student student1 = new Student("student", "one", student1Scores);
+        Student student2 = new Student("student", "two", student2Scores);
+        Student student3 = new Student("student", "three", student3Scores);
+        Student student4 = new Student("student", "four", student4Scores);
+
+        Student[] allStudents = {student1, student2,student3,student4};
+        Classroom testClassroom = new Classroom(allStudents);
+        testClassroom.removeStudent("student","one");
+
+        Student [] postEnrollment = testClassroom.getStudents();
+        String postEnrollmentAsString = Arrays.toString(postEnrollment);
+
+        System.out.println("===========================");
+        System.out.println(postEnrollmentAsString);
+
+    }
+
+    @Test
+    public void getStudentsByScore() {
+        Double[] student1Scores = {100.0, 175.0, 70.0};
+        Double[] student2Scores = {225.0, 25.0,170.0};
+        Double [] student3Scores = {50.0, 50.0,50.0};
+        Double [] student4Scores = {200.0, 80.0,80.0};
 
         Student student1 = new Student("student", "one", student1Scores);
         Student student2 = new Student("student", "two", student2Scores);
@@ -90,7 +122,6 @@ public class ClassroomTest {
 
         System.out.println("===========================");
         System.out.println(postEnrollmentAsString);
-
     }
 }
 

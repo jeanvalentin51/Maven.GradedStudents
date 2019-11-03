@@ -38,10 +38,20 @@ public class Classroom {
     }
 
     public void addStudent (Student newStudent){
-        this.allStudents[this.allStudents.length - 1] = newStudent;
+        int positionToAddStudent = 0;
+
+        for (int i = 0; i < this.allStudents.length; i++){
+            if (this.allStudents[i] == null) {
+                positionToAddStudent = i;
+                break;
+            }
+        }
+        this.allStudents[positionToAddStudent] = newStudent;
+
     }
 
     public void removeStudent (String firstName, String lastName){
+
         int lastStudentIndex = allStudents.length - 1;
         int indexStudentToBeRemoved = 0;
 
@@ -51,7 +61,10 @@ public class Classroom {
             }
         }
 
-        allStudents[indexStudentToBeRemoved] = allStudents[lastStudentIndex];
+        for (int i = indexStudentToBeRemoved; i < allStudents.length; i ++){
+            if (i!= allStudents.length - 1) allStudents[i] = allStudents[i+1];
+        }
+
         allStudents[lastStudentIndex] = null;
     }
 
@@ -59,7 +72,7 @@ public class Classroom {
         double studentOneAverageScore = 0.0;
         double studentTwoAverageScore = 0.0;
         Student tempPosition;
-
+        //TODO add lexigraphical sorting
         for (int i = 0; i < allStudents.length; i++){
             if (allStudents.length > 1){
                 for (int k = i; k < allStudents.length ; k++){
@@ -74,6 +87,12 @@ public class Classroom {
             }
         }
         return allStudents;
+    }
+
+    public  void getGradeBook (){
+        double meanScore = getAverageExamScore();
+
+
     }
 
 }
