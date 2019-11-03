@@ -8,21 +8,14 @@ import java.util.Collections;
 public class Student {
     private String firstName;
     private String lastName;
-    private Integer numberOfExamsTaken;
-
-
-
-
     ArrayList<Double> testScores = new ArrayList<Double>();
-    //ArrayList<Double> examScores;
 
 
-    public Student(String studentFirstName, String studentLasName, Double [] examScores) {
+
+    public Student(String studentFirstName, String studentLasName, Double [] testScores) {
         this.firstName = studentFirstName;
         this.lastName = studentLasName;
-        Collections.addAll(this.testScores,examScores);
-        //this.examScores.addAll(Arrays.asList(testScores));
-        //examScores = new ArrayList<Double>();
+        Collections.addAll(this.testScores,testScores);
     }
 
 
@@ -44,19 +37,13 @@ public class Student {
     }
 
 
-    public ArrayList<Double> getTestScores() {
-        return this.testScores;
-    }
-
-
     public Integer getNumberOfExamsTaken(){
-        this.numberOfExamsTaken  = this.testScores.size();
-        return this.numberOfExamsTaken;
+        return this.testScores.size();
     }
 
 
     public void setExamScore(int examID, Double newScore){
-            this.testScores.set(examID - 1,newScore);
+        this.testScores.set(examID - 1,newScore);
     }
 
     public String getExamScores(){
