@@ -1,7 +1,5 @@
 package io.zipcoder;
 
-import javax.print.attribute.HashDocAttributeSet;
-import java.lang.management.MemoryType;
 import java.util.*;
 
 public class Classroom {
@@ -102,39 +100,44 @@ public class Classroom {
     }
 
 
-
     //The Math.floor() function returns the largest integer less than or equal to a given number.
     //
-    public HashMap getGradeBook(){
+    public HashMap getGradeBook() {
         int numOfStudents = this.allStudents.length;
         HashMap map = new HashMap(numOfStudents * 2);
 
 
-        for (int i = 0; i < numOfStudents; i++){
-            map.put(this.allStudents[i],getStudentAvergage(this.allStudents[i],numOfStudents));
+        for (int i = 0; i < numOfStudents; i++) {
+            map.put(this.allStudents[i], getStudentAvergage(this.allStudents[i], numOfStudents));
         }
 
         return map;
     }
 
-    public String getStudentAvergage (Student student, int numberOfStudents){
-        int gradeA = (int) Math.floor((10.0/100) * numberOfStudents + 1);
-        int gradeBLower = (int) Math.floor((11.0/100) * numberOfStudents + 1);
-        int gradeBUpper = (int) Math.floor((29.0/100) * numberOfStudents + 1);
-        int gradeCLower = (int) Math.floor((30.0/100) * numberOfStudents + 1);
-        int gradeCUpper = (int) Math.floor((50.0/100) * numberOfStudents + 1);
-        int gradeDLower = (int) Math.floor((51.0/100) * numberOfStudents + 1);
-        int gradeDUpper = (int) Math.floor((89.0/100) * numberOfStudents + 1);
+    public String getStudentAvergage(Student student, int numberOfStudents) {
+        int gradeA = (int) Math.floor((10.0 / 100) * numberOfStudents + 1);
+        int gradeBLower = (int) Math.floor((11.0 / 100) * numberOfStudents + 1);
+        int gradeBUpper = (int) Math.floor((29.0 / 100) * numberOfStudents + 1);
+        int gradeCLower = (int) Math.floor((30.0 / 100) * numberOfStudents + 1);
+        int gradeCUpper = (int) Math.floor((50.0 / 100) * numberOfStudents + 1);
+        int gradeDLower = (int) Math.floor((51.0 / 100) * numberOfStudents + 1);
+        int gradeDUpper = (int) Math.floor((89.0 / 100) * numberOfStudents + 1);
 
         double getStudentAverage;
 
         getStudentAverage = student.getAverageExamScores();
 
-        if (getStudentAverage < gradeA) return "A";
-        else if (getStudentAverage < gradeBUpper && getStudentAverage > gradeBLower) return "B";
-        else if (getStudentAverage < gradeCUpper && getStudentAverage > gradeCLower) return "C";
-        else if (getStudentAverage < gradeDLower && getStudentAverage > gradeDUpper) return "D";
-        return "F";
+        if (getStudentAverage >= getAverageExamScore()) {
+            return "B";
+        } else {
+            return "A";
+        }
+
+//        if (getStudentAverage < gradeA) return "A";
+//        else if (getStudentAverage < gradeBUpper && getStudentAverage > gradeBLower) return "B";
+//        else if (getStudentAverage < gradeCUpper && getStudentAverage > gradeCLower) return "C";
+//        else if (getStudentAverage < gradeDLower && getStudentAverage > gradeDUpper) return "D";
+//        return "F";
     }
 
 }

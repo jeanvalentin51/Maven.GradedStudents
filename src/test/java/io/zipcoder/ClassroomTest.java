@@ -148,21 +148,21 @@ public class ClassroomTest {
 
     @Test
     public void testMath (){
-        int gradeA = (int) Math.floor((10.0/100) * 5 + 1);
-        int gradeBLower = (int) Math.floor((11.0/100) * 5 + 1);
-        int gradeBUpper = (int) Math.floor((29.0/100) * 5 + 1);
-        int gradeCLower = (int) Math.floor((30.0/100) * 5 + 1);
-        int gradeCUpper = (int) Math.floor((50.0/100) * 5 + 1);
-        int gradeDLower = (int) Math.floor((51.0/100) * 5 + 1);
-        int gradeDUpper = (int) Math.floor((89.0/100) * 5 + 1);
+        int gradeA = (int) Math.floor((10.0/100) * 15 + 1);
+        int gradeBLower = (int) Math.floor((11.0/100) * 15 + 1);
+        int gradeBUpper = (int) Math.floor((10.0/100) * 15 + 1);
+        int gradeCLower = (int) Math.floor((20.0/100) * 15 + 1);
+//        int gradeCUpper = (int) Math.floor((50.0/100) * 5 + 1);
+//        int gradeDLower = (int) Math.floor((51.0/100) * 5 + 1);
+//        int gradeDUpper = (int) Math.floor((89.0/100) * 5 + 1);
 
         System.out.println(gradeA);
         System.out.println(gradeBLower);
         System.out.println(gradeBUpper);
         System.out.println(gradeCLower);
-        System.out.println(gradeCUpper);
-        System.out.println(gradeDLower);
-        System.out.println(gradeDUpper);
+//        System.out.println(gradeCUpper);
+//        System.out.println(gradeDLower);
+//        System.out.println(gradeDUpper);
 
     }
 }
