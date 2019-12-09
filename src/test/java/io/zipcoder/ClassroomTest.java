@@ -127,11 +127,11 @@ public class ClassroomTest {
     @Test
     public void getGradeBook() {
 
-        Double[] examScores1 = {99.0, 50.0, 82.0};
-        Double[] examScores2 = {100.0, 100.0, 50.0};
-        Double[] examScores3 = {92.0, 80.0, 73.0};
-        Double[] examScores4 = {100.0, 84.0, 62.0};
-        Double[] examScores5 = {60.0, 50.0, 40.0};
+        Double[] examScores1 = {99.0, 50.0, 82.0}; // 77
+        Double[] examScores2 = {225.0, 25.0, 170.0}; // 140
+        Double[] examScores3 = {50.0, 50.0, 50.0}; // 50
+        Double[] examScores4 = {100.0, 84.0, 62.0}; // 82
+        Double[] examScores5 = {60.0, 50.0, 40.0}; // 50
 
         Student student1 = new Student("One", "Hunter", examScores1);
         Student student2 = new Student("Two", "Smith", examScores2);
@@ -139,19 +139,31 @@ public class ClassroomTest {
         Student student4 = new Student("Four", "Brown", examScores4);
         Student student5 = new Student("Five", "Ambron", examScores5);
 
-        Student[] students = new Student[5];
+        Student[] students = {student1,student2,student3,student4, student5};
         Classroom classroom = new Classroom(students);
 
-        classroom.addStudent(student1);
-        classroom.addStudent(student2);
-        classroom.addStudent(student3);
-        classroom.addStudent(student4);
-        classroom.addStudent(student5);
-
-
-        TreeMap<Character, ArrayList<Student>> output = classroom.getGradeBook();
-        //Then
+        Map output = classroom.getGradeBook();
         System.out.println(output);
+    }
+
+    @Test
+    public void testMath (){
+        int gradeA = (int) Math.floor((10.0/100) * 15 + 1);
+        int gradeBLower = (int) Math.floor((11.0/100) * 15 + 1);
+        int gradeBUpper = (int) Math.floor((10.0/100) * 15 + 1);
+        int gradeCLower = (int) Math.floor((20.0/100) * 15 + 1);
+//        int gradeCUpper = (int) Math.floor((50.0/100) * 5 + 1);
+//        int gradeDLower = (int) Math.floor((51.0/100) * 5 + 1);
+//        int gradeDUpper = (int) Math.floor((89.0/100) * 5 + 1);
+
+        System.out.println(gradeA);
+        System.out.println(gradeBLower);
+        System.out.println(gradeBUpper);
+        System.out.println(gradeCLower);
+//        System.out.println(gradeCUpper);
+//        System.out.println(gradeDLower);
+//        System.out.println(gradeDUpper);
+
     }
 }
 
